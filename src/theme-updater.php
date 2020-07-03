@@ -53,7 +53,7 @@ class ThemeUpdater extends UpdaterBase {
 	public function __construct( $args = [] ) {
 		// Set theme data.
 		$theme_data = ( is_multisite() ? (array) get_site_option( "wp-gitlab-updater-themes" ) : (array) get_option( "wp-gitlab-updater-themes" ) );
-		if ( false !== $theme_data && false !== $theme_data[0] ) {
+		if ( false !== $theme_data && ! empty( $theme_data ) ) {
 			$this->theme_data = $theme_data;
 		}
 
